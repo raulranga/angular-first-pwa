@@ -1,0 +1,12 @@
+<div class="flex flex-wrap justify-center gap-4 mt-3 mb-3">
+  <app-profile-card
+    *ngFor="let brew of breweries"
+    [id]="brew.id"
+    [name]="brew.name"
+    [country]="brew.country"
+    [city]="brew.city"
+    [address]="brew.address_1"
+    [phone]="brew.phone"
+    [website]="brew.website_url"
+  ></app-profile-card>
+</div>
