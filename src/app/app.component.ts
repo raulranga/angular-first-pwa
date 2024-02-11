@@ -3,12 +3,7 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {SwUpdate, VersionEvent} from "@angular/service-worker";
 import { NgFor } from "@angular/common";
 
-import { tap } from "rxjs";
-
-import { initFlowbite } from "flowbite";
-
 import { ProfileCardComponent } from "./components/profile-card/profile-card.component";
-import { MyDataServiceService } from "./services/my-data-service.service";
 import { BrewModel } from "./models/brew.model";
 
 enum VersionEventTypes {
@@ -32,7 +27,6 @@ enum VersionEventTypes {
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  private dataService = inject(MyDataServiceService);
   private swUpdate = inject(SwUpdate)
 
   protected breweries!: BrewModel[];
@@ -40,7 +34,6 @@ export class AppComponent implements OnInit {
   title = 'angular-first-pwa';
 
   ngOnInit() {
-    initFlowbite();
     if (this.swUpdate.isEnabled) {
       this.swUpdate.versionUpdates.pipe(
       ).subscribe((versionEvent: VersionEvent) => {

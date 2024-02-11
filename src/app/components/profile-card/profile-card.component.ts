@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgIf} from "@angular/common";
 import {ClipboardModule} from '@angular/cdk/clipboard';
+import {initFlowbite} from "flowbite";
 
 @Component({
   selector: 'app-profile-card',
@@ -15,12 +16,13 @@ export class ProfileCardComponent implements OnInit {
   @Input() country!: string;
   @Input() city!: string;
   @Input() address!: string;
-  @Input() phone!: string;
+  @Input() phone?: string;
   @Input() website?: string;
   @Input() img?: string;
 
   protected randomNumber = Math.floor(Math.random() * 300) + 1;
 
   ngOnInit() {
+    initFlowbite();
   }
 }
