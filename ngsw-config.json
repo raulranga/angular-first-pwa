@@ -26,5 +26,30 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "breweries-api",
+      "urls": [
+        "https://api.openbrewerydb.org/v1/breweries"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxAge": "1d",
+        "maxSize": 1
+      }
+    },
+    {
+      "name": "users-api",
+      "urls": [
+        "https://randomuser.me/api/?results=50"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "timeout": "5s",
+        "maxAge": "1d",
+        "maxSize": 1
+      }
+    }
   ]
 }
