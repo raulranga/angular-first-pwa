@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {SwUpdate, VersionEvent} from "@angular/service-worker";
 import { NgFor } from "@angular/common";
 
@@ -24,7 +24,9 @@ enum VersionEventTypes {
   imports: [
     RouterOutlet,
     NgFor,
-    ProfileCardComponent
+    ProfileCardComponent,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -47,10 +49,6 @@ export class AppComponent implements OnInit {
         }
       });
     }
-    this.dataService.getBreweries().pipe(
-      tap((breweries) => {
-        this.breweries = breweries;
-      })
-    ).subscribe();
+
   }
 }

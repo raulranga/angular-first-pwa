@@ -16,7 +16,8 @@ export class ProfileCardComponent implements OnInit {
   @Input() city!: string;
   @Input() address!: string;
   @Input() phone!: string;
-  @Input() website!: string;
+  @Input() website?: string;
+  @Input() img?: string;
 
   protected randomNumber = Math.floor(Math.random() * 300) + 1;
 

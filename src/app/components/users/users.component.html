@@ -1,0 +1,12 @@
+<div class="flex flex-wrap justify-center gap-4 mt-3 mb-3">
+  <app-profile-card
+    *ngFor="let user of users"
+    [id]="user.id.value"
+    [name]="user.name.title + user.name.first + user.name.last"
+    [country]="user.location.country"
+    [city]="user.location.city"
+    [address]="user.location.street.name + user.location.street.number"
+    [phone]="user.phone"
+    [img]="user.picture.medium"
+  ></app-profile-card>
+</div>

@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "start:prod": "ng build && npx http-server -p 8080 -c-1 dist/angular-first-pwa/browser",
+    "start:prod": "ng build --configuration=production && npx http-server -p 8080 -c-1 dist/angular-first-pwa/browser",
+    "start:prodHost": "ng build --configuration=production && npx http-server -p 8080 -c-1 dist/angular-first-pwa/browser --host 192.168.0.106 --disable-host-check",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
